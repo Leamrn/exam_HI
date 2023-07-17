@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mismatched Image Names and Metadata</title>
+</head>
+<body>
+    <h1>Mismatched Image Names and Metadata</h1>
+    <h2>Cues found in both image names and metadata:</h2>
+    <ul>
+        <li>Patient ID: Unique identifier for each patient.</li>
+        <li>Image Dates: Dates associated with the images.</li>
+        <li>Study/Series Descriptions: Textual information about the study or series.</li>
+    </ul>
+
+    <h3>Results:</h3>
+    <ul>
+        <li>Image Cues: {{ results.image_cues }}</li>
+        <li>Metadata Cues: {{ results.metadata_cues }}</li>
+        <li>Missing Metadata Cues: {{ results.missing_metadata_cues }}</li>
+        <li>Missing Image Cues: {{ results.missing_image_cues }}</li>
+        <li>Mismatched Image Names: {{ results.mismatched_image_names }}</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patients</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patients</h1>
+    <div class="grid-container">
+    {% for index in range(patient_id|length) %}
+        {% set id = patient_id[index] %}
+        {% set name = PatientName[index] %}
+        {% set date = PatientDate[index] %}
+        {% set age = PatientAge[index] %}
+        <div class="grid-item">
+    <div>
+        <div>Patient name: {{name}}</div>
+        <div>Date: {{ date }}</div>
+        <div>Age: {{ age }}</div>
+        <img src="{{ url_for('static', filename='images/image_' + id+ '.png') }}" alt="Image {{ id }}">
+        <button onclick="window.location.href='/patients/{{ id }}'">Detail</button>
+    </div>
+</div>
+            {% endfor %}
+
+
+        </div>
+ </body>
+</html>

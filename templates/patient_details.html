@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detail patient</title>
+</head>
+<body>
+    <h1>Detail patient</h1>
+    
+    <h1>Details for Patient {{ patient_id }}</h1>
+        <img src="{{ url_for('static', filename='images/image_' + patient_id + '.png', _external=True) }}" alt="Patient Photo">
+
+
+    <h1>Other picture of the Patient {{ patient_id }}</h1>
+    {% for image in filtered_id %}
+    <img src="{{ url_for('static', filename='images/image_' + image + '.png', _external=True) }}" alt="Other patient Photo">
+    {% endfor %}
+    <a href="{{ url_for('patients') }}">Back to the patient list</a>
+</body>
+</html>
+
